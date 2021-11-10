@@ -23,8 +23,24 @@
     <app-product-alerts [product]="product" (notify)="onNotify()"> <!--le pasamos el producto actual del bucle como input de la componente usando binding-->
         <!--cuando llegue una notificacion (evento) desde el hijo se llamará al metodo onNotify que hemos creado en el .ts-->>
     </app-product-alerts>
+    <br>
+    <p>¿Cuánto te gusta?</p>
+    <mat-slider min="1" max="100" step="1" value="50"></mat-slider>
 
+    <form class="example-form">
 
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Favorite food</mat-label>
+        <input matInput placeholder="Ex. Pizza" value="Sushi">
+      </mat-form-field><br>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Leave a comment</mat-label>
+        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+      </mat-form-field>
+    </form>
+
+    <app-card></app-card> <!--Ejemplo de componente material design example, que he metido sus partes en una nueva componente card y la importé aquí. Se ve negra, porque cuando instale las componentes puse el tema pink and blue-->>
 
 
 

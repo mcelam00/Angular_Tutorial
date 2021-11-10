@@ -7,6 +7,15 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+import { CardComponent } from './card/card.component';
+
+
 
 @NgModule({
   imports: [
@@ -14,13 +23,20 @@ import { ProductAlertsComponent } from './product-alerts/product-alerts.componen
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
-    ])
+    ]),
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatCardModule
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
     ProductListComponent,
-    ProductAlertsComponent //si vemos al crear la compontente con el comando ng generate component product-alerts el generador la añade aqui para que esté disponible para otras componentes de la aplicación
+    ProductAlertsComponent,
+    CardComponent //si vemos al crear la compontente con el comando ng generate component product-alerts el generador la añade aqui para que esté disponible para otras componentes de la aplicación
   ],
   bootstrap: [
     AppComponent
