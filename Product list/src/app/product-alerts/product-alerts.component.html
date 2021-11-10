@@ -1,0 +1,8 @@
+<!--COMPONENTE HIJA DE LA PRODUCT-LIST-->
+<!--Es como si metieramos éste código HTML en el HTML padre dónde hacemos la llamada-->
+
+<!--El product que accedemos en el if es el atributo product de la clase del .ts que a su vez viene del padre-->
+<div *ngIf="product && product.price > 700">
+    <button (click)="notify.emit()">Notify Me</button> <!--Cuando cliquemos el boton, se llama al atributo notify que es una instancia de un objeto, por eso podemos acceder al metodo emit() que emite un evento hacia el padre-->
+</div> <!--Vamos a poner un boton que solamente se muestre cuando exista producto y el precio del producto sea mayor que 700 euros-->
+    <!--como solamente Phone XL cumple la condicion de todos los que vienen en cada iteración del for del padre será el único caso en el que la importacion de esta componente mostrará el botón-->

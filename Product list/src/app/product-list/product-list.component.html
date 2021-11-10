@@ -1,0 +1,39 @@
+<h2>Products</h2>
+
+<div *ngFor="let product of products"><!--Es como el vfor de vue, que repite el div para cada producto en la lista contenida en products.ts-->
+
+    <h3>
+        <a [title]="product.name + ' details'"> <!--meto el nombre del producto en un enlace haciéndolo seleccionable y [title] permite poner un título que sale al posar el cursor, en este caso escribimos la propiedad nombre junto a "details"-->
+            {{product.name}} <!--product es cada porducto de la lista y el name es el atributo nombre del producto definido en el .ts-->
+        </a>
+    </h3>    
+
+    <p *ngIf="product.description"><!--El if hace que el elemento parrafo de HTML solo se cree si existe descripcion a mostrar en él (if hay valor para el product.description -> si es distinto de '')-->
+
+        Description Info : {{product.description}}
+
+    </p>
+
+    <button (click)="share()"> <!--en el evento clicar llamaré al método share() del javascript de ésta componente (el .ts)-->
+        Share <!--texto del botón-->
+    </button>
+
+    <!--Importo la componente que he creado como si fuera un elemento de HTML de los normales pero es uno mio propio usando el selector que definimos en el .ts como nombre en la etiquieta <>-->
+    <br><br>
+    <app-product-alerts [product]="product" (notify)="onNotify()"> <!--le pasamos el producto actual del bucle como input de la componente usando binding-->
+        <!--cuando llegue una notificacion (evento) desde el hijo se llamará al metodo onNotify que hemos creado en el .ts-->>
+    </app-product-alerts>
+
+
+
+
+
+
+</div><!--FIN DEL BUCLE-->
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
